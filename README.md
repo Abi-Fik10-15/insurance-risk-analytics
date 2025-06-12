@@ -21,3 +21,4 @@ This project involves end-to-end risk analytics for insurance charge prediction 
 pip install -r requirements.txt
 # Run the Jupyter Notebook
 "# insurance-risk-analytics" 
+"# insurance-risk-analytics" 
