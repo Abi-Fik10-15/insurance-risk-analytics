@@ -1,3 +1,19 @@
 /config.local
 /tmp
 /cache
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environment
+.env
+*.env
+.venv/
+
+# Data
+data/processed/
+models/
+reports/
