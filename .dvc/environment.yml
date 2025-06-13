@@ -1,0 +1,12 @@
+name: insurance-risk
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pandas
+  - scikit-learn
+  - xgboost
+  - joblib
+  - pip
+  - pip:
+      - dvc[s3]
