@@ -1,0 +1,25 @@
+stages:
+  clean:
+    cmd: python src/clean.py --input data/raw/claims.csv --output data/processed/claims_clean.csv
+    deps:
+      - data/raw/claims.csv
+      - src/clean.py
+    outs:
+      - data/processed/claims_clean.csv
+
+  train:
+    cmd: python src/train.py --input data/processed/claims_clean.csv --model models/xgb_model.joblib --metrics reports/metrics.json
+    deps:
+      - data/processed/claims_clean.csv
+      - src/train.py
+    outs:
+      - models/xgb_model.joblib
+    metrics:
+      - reports/metrics.json
+
+  evaluate:
+    cmd: python src/evaluate.py --model models/xgb_model.joblib --test-data data/processed/claims_clean.csv
+    deps:
+      - models/xgb_model.joblib
+      - src/evaluate.py
+      - data/processed/claims_clean.csv
